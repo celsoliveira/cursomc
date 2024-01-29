@@ -76,6 +76,7 @@ public class CategoriaResource {
 	
 	// localhost:8080/categorias/page?linesPerPage=3&page=0&direction=DESC
 	// localhost:8080/categorias/page?linesPerPage=1&page=0&direction=ASC
+	
 	@RequestMapping(value = "/page",  method = RequestMethod.GET)
 	public ResponseEntity<Page<CategoriaDTO>> findPage(
 				@RequestParam(value="page", defaultValue = "0") Integer page,
