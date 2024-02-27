@@ -3,9 +3,7 @@ package com.nelioalves.cursomc.dto;
 import java.io.Serializable;
 
 import org.hibernate.validator.constraints.Length;
-
 import com.nelioalves.cursomc.domain.Categoria;
-
 import jakarta.validation.constraints.NotEmpty;
 
 public class CategoriaDTO implements Serializable{
