@@ -1,6 +1,8 @@
 package com.nelioalves.cursomc.domain;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -89,7 +91,7 @@ public class ItemPedido implements Serializable {
 		id.setPedido(pedido);
 	}
 
-	public Produto getProduco() {
+	public Produto getProduto() {
 		return id.getProduto();
 	}
 	
@@ -115,5 +117,22 @@ public class ItemPedido implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
+
+	@Override
+	public String toString() {
+		
+		NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append(getProduto().getNome());
+		builder.append(", Quantidade: ");
+		builder.append(getQuantidade());
+		builder.append(", Preco unitário: ");
+		builder.append(nf.format(getPreco()));
+		builder.append(", Subtotal: ");
+		builder.append(nf.format(getSubTotal()));
+		builder.append("]");
+		return builder.toString();
+	}
 
 }
