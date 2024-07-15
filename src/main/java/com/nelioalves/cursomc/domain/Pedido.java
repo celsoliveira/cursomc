@@ -141,9 +141,9 @@ public class Pedido implements Serializable {
 		
 		StringBuilder builder = new StringBuilder();
 		builder.append("Pedido número: ");
-		builder.append(getId());
+		builder.append(getId() + ", ");
 		builder.append("Instance: ");
-		builder.append(sdf.format(getInstante()));
+		builder.append(sdf.format(getInstante()) + ", ");
 		builder.append("Cliente: ");
 		builder.append(getCliente().getNome());
 		builder.append("Situação do pagamento: ");
